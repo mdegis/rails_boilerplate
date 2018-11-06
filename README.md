@@ -35,3 +35,7 @@ AwesomePrint.irb!
 [] Restful User Actions
 [] Documentation
 [] Fast JSON API
+
+# Requirements
+
+- CMake (for rugged)

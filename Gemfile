@@ -26,8 +26,13 @@ end
 group :development do
   gem "annotate"
   gem "awesome_print"
+  gem "brakeman", require: false
+  gem "haml-lint", require: false
   gem "letter_opener_web"
   gem "listen", ">= 3.0.5", "< 3.2"
+  gem "overcommit", require: false
+  gem "rubocop", require: false
+  gem "ruby_css_lint", require: false
   gem "spring"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "web-console", ">= 3.3.0"
