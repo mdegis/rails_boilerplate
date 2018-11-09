@@ -27,6 +27,7 @@ group :development do
   gem "annotate"
   gem "awesome_print"
   gem "brakeman", require: false
+  gem "bullet"
   gem "haml-lint", require: false
   gem "letter_opener_web"
   gem "listen", ">= 3.0.5", "< 3.2"

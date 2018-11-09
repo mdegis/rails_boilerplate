@@ -58,6 +58,9 @@ GEM
       msgpack (~> 1.0)
     brakeman (4.3.1)
     builder (3.2.3)
+    bullet (5.8.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (10.0.2)
     capybara (3.10.1)
       addressable
@@ -241,6 +244,7 @@ GEM
     uglifier (4.1.19)
       execjs (>= 0.3.0, < 3)
     unicode-display_width (1.4.0)
+    uniform_notifier (1.12.1)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.7.0)
@@ -262,6 +266,7 @@ DEPENDENCIES
   awesome_print
   bootsnap (>= 1.1.0)
   brakeman
+  bullet
   byebug
   capybara (>= 2.15)
   chromedriver-helper

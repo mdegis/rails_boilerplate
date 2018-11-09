@@ -52,12 +52,24 @@ Overcommit is a tool to manage and configure. In addition to supporting a wide v
 
 `overcommit --install`
 
+OR
+
+Install hooks with force: `overcommit --force`
+
+Sign: `overcommit --sign`
+
 #### Disabling Overcommit
 If you have scripts that execute git commands where you don't want Overcommit hooks to run, you can disable Overcommit entirely by setting the `OVERCOMMIT_DISABLE` environment variable.
 
 `OVERCOMMIT_DISABLE=1 ./my-custom-script`
 
+### [Bullet](https://github.com/flyerhzm/bullet)
+
+The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes. It will watch your queries while you develop your application and notify you when you should add eager loading (N+1 queries), when you're using eager loading that isn't necessary and when you should use counter cache.
+
+
 # TODO:
+[] Overcommit test on other machine
 
 [] Docker
 [] Grape
@@ -65,6 +77,3 @@ If you have scripts that execute git commands where you don't want Overcommit ho
 [] Documentation
 [] Fast JSON API
 
-# Requirements
-
-- CMake (for rugged)
