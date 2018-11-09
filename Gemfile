@@ -32,6 +32,7 @@ group :development do
   gem "letter_opener_web"
   gem "listen", ">= 3.0.5", "< 3.2"
   gem "overcommit", require: false
+  gem "pry-rails"
   gem "rubocop", require: false
   gem "ruby_css_lint", require: false
   gem "spring"

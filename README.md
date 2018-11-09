@@ -19,13 +19,13 @@
 
 Awesome Print is a Ruby library that pretty prints Ruby objects in full color exposing their internal structure with proper indentation. Rails ActiveRecord objects and usage within Rails templates are supported via included mixins.
 
-To use it edit your irbrc file: `vi ~/.irbrc` and append following lines.
+To use it edit your pryrc file: `vi ~/.pryrc` and append following lines.
 
 ```
 require "awesome_print"
 IRB.conf[:SAVE_HISTORY] = 200
 IRB.conf[:HISTORY_FILE] = '~/.irb-history'
-AwesomePrint.irb!
+AwesomePrint.pry!
 ```
 
 ### [Annotate](https://github.com/ctran/annotate_models)
@@ -66,6 +66,11 @@ If you have scripts that execute git commands where you don't want Overcommit ho
 ### [Bullet](https://github.com/flyerhzm/bullet)
 
 The Bullet gem is designed to help you increase your application's performance by reducing the number of queries it makes. It will watch your queries while you develop your application and notify you when you should add eager loading (N+1 queries), when you're using eager loading that isn't necessary and when you should use counter cache.
+
+### [Pry-Rails](https://github.com/rweng/pry-rails)
+
+Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project.
+This is a small gem which causes `rails console` to open [pry](http://pry.github.com/). It therefore depends on *pry*.
 
 
 # TODO:
