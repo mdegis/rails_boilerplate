@@ -28,3 +28,19 @@
 
 # IDE folder
 /.idea/*
+
+# ignore enviromment files
+.env
+
+# Ignore precompiled assets
+/public/assets/*
+
+# Ignore simplecov result
+/coverage/*
+
+# Ignore Shrine uploads
+/public/uploads
+
+# Ignore JS packs
+/public/packs
+/public/packs-test

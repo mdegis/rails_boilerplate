@@ -1,7 +1,7 @@
 # README
 
 - Rails version: 5.2.1
-- Ruby version: 2.5.1
+- Ruby version: 2.5.3
 
 # General 
 
@@ -72,13 +72,61 @@ The Bullet gem is designed to help you increase your application's performance b
 Avoid repeating yourself, use pry-rails instead of copying the initializer to every rails project.
 This is a small gem which causes `rails console` to open [pry](http://pry.github.com/). It therefore depends on *pry*.
 
+## Docker
+
+This project aims to build a lean Docker image for use in production. Therefore it's based on the official Alpine Ruby image, uses multi-stage building and some [optimizations that I've learned ledermann's blog](https://www.georg-ledermann.de/blog/2018/04/19/dockerize-rails-the-lean-way/). This results in an image size of ~120MB.
+
+### Multi container architecture
+
+There is a separate **docker-compose.yml** for every environment: [development](docker-compose.yml), [test](docker-compose.test.yml) and [production](docker-compose.production.yml). The whole stack is divided into multiple different containers:
+
+- **app:** Main part. It contains the Rails code to handle web requests (by using the [Puma](https://github.com/puma/puma) gem). See the [Dockerfile](/Dockerfile) for details. The image is based on the Alpine variant of the official [Ruby image](https://hub.docker.com/_/ruby/) and uses multi-stage building.
+- **worker:** Background processing. It contains the same Rails code, but only runs Sidekiq
+- **db:** PostgreSQL database
+- **elasticsearch:** Full text search engine
+- **memcached:** Memory caching system (used from within the app via the [Dalli](https://github.com/petergoldstein/dalli) gem)
+- **redis:** In-memory key/value store (used by Sidekiq and ActionCable)
+- **backup:** Regularly backups the database as a dump via CRON to an Amazon S3 bucket
+
+For running tests using RSpec, there is an additional container:
+
+- **selenium:** Standalone Chrome for executing system tests containing JavaScript
+
+### Check it out!
+
+To start up the application in your local Docker environment:
+
+```bash
+docker-compose build
+docker-compose run app yarn install
+docker-compose up
+```
+
+You can access the rails server with: `localhost:3000`
+
+Note: You may need `sudo sysctl -w vm.max_map_count=262144` if you're going to run elasticsearch container too.
+
+### CI
+
+The repo contains [.travis.yml](/.travis.yml) and [.gitlab-ci.yml](/.gitlab-ci.yml) that run tests and push new image if there is no error.
+
+### Production deployment
+
+The Docker image build for production is different from development or test. It includes precompiled assets only (no node_modules and no sources). The [test folder](/test) is removed and the Alpine packages for Node and Yarn are not installed.
+
+The stack is ready to host with [nginx proxy](https://github.com/jwilder/nginx-proxy) and [letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion). See [docker-compose.production.yml](/docker-compose.production.yml) for example setup.
 
 # TODO:
+
 [] Overcommit test on other machine
 
-[] Docker
+[] Calling only `rake` will run tests and rubocop, document it. 
+
 [] Grape
+
 [] Restful User Actions
+
 [] Documentation
+
 [] Fast JSON API
 
