@@ -5,7 +5,6 @@
 # Table name: users
 #
 #  id                     :bigint(8)        not null, primary key
-#  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
