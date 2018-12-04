@@ -11,6 +11,15 @@ module API
         hide_documentation_path: true,
         mount_path: "/api/v1/swagger_doc",
         hide_format: true,
+        info: {
+          title: "Rails Boilerplate API",
+          description: "Rails Boilerplate API documentation description.",
+          contact_name: "Rails Boilerplate",
+          contact_email: "john_smith@exaple.com",
+          contact_url: "https://example.com",
+          license: "Copyright",
+          license_url: "https://www.patentsoffice.ie/en/Copyright/",
+        },
       )
     end
   end
