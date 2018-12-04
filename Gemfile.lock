@@ -109,6 +109,8 @@ GEM
     devise_lastseenable (0.0.6)
       devise
       rails (>= 3.0.4)
+    doorkeeper (5.0.2)
+      railties (>= 4.2)
     equalizer (0.0.11)
     erubi (1.7.1)
     execjs (2.7.0)
@@ -321,6 +323,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   devise_lastseenable
+  doorkeeper
   grape
   grape-active_model_serializers
   grape-swagger
