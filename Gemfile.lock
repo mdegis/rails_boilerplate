@@ -112,6 +112,8 @@ GEM
     equalizer (0.0.11)
     erubi (1.7.1)
     execjs (2.7.0)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     ffi (1.9.25)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -129,6 +131,9 @@ GEM
       grape (>= 0.16.2)
     grape-swagger-rails (0.3.0)
       railties (>= 3.2.12)
+    grape_fast_jsonapi (0.1.0)
+      fast_jsonapi
+      grape
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -325,6 +330,7 @@ DEPENDENCIES
   grape-active_model_serializers
   grape-swagger
   grape-swagger-rails
+  grape_fast_jsonapi
   haml-lint
   jbuilder (~> 2.5)
   letter_opener_web
