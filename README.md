@@ -19,6 +19,16 @@ Grape is a REST-like API framework for Ruby. It's designed to run on Rack or com
 
 You can check the [API folder](/app/controllers/api) to see Grape files and `http://#{RAILS_HOST_WITH_PORT}/documentation` to use automatically generated Swagger documentation page.
 
+### [API Pagination](https://github.com/davidcelis/api-pagination)
+
+Paginate in your headers, not in your response body.
+This follows the proposed [RFC-8288](https://tools.ietf.org/html/rfc8288) standard for Web linking.
+
+You can check [example file](/app/controllers/api/v1/users.rb) to see how to use it.
+
+[Pagy](https://github.com/ddnexus/pagy) is the installed and configured to use in api pagination. You can change the default values in [configuration file](/config/initializers/api_pagination.rb).
+
+
 ## Development
 
 ### [Awesome Print](https://github.com/awesome-print/awesome_print)
