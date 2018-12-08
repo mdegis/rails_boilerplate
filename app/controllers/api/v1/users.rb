@@ -5,7 +5,7 @@ module API
 
       resource :users do
         desc "Return all users"
-        get "", root: :graduates do
+        get "", root: :users do
           User.all
         end
 
@@ -13,7 +13,7 @@ module API
         params do
           requires :id, type: String, desc: "ID of the user"
         end
-        get ":id", root: "graduate" do
+        get ":id", root: "user" do
           User.find(permitted_params[:id])
         end
       end

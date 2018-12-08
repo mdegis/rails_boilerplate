@@ -5,6 +5,7 @@
 # Table name: users
 #
 #  id                     :bigint(8)        not null, primary key
+#  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
@@ -44,6 +45,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :trackable, :lastseenable, :lockable,
          :confirmable
+
+  has_many :access_grants, class_name: "Doorkeeper::AccessGrant",
+                           foreign_key: :resource_owner_id,
+                           dependent: :destroy
+
+  has_many :access_tokens, class_name: "Doorkeeper::AccessToken",
+                           foreign_key: :resource_owner_id,
+                           dependent: :destroy
 
   validates :email, uniqueness: true
   validates :username, uniqueness: true
