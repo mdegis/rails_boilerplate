@@ -17,7 +17,7 @@
 
 Grape is a REST-like API framework for Ruby. It's designed to run on Rack or complement existing web application frameworks such as Rails and Sinatra by providing a simple DSL to easily develop RESTful APIs. It has built-in support for common conventions, including multiple formats, subdomain/prefix restriction, content negotiation, versioning and much more.
 
-You can check the [API folder](/app/controllers/api) to see Grape files and `http://#{RAILS_HOST_WITH_PORT}/documentation` to use automatically generated Swagger documentation page.
+You can check the [API folder](/app/controllers/api) to see Grape files and `http://#{RAILS_HOST_WITH_PORT}/documentation` to use automatically generated Swagger documentation page via [grape-swagger](https://github.com/ruby-grape/grape-swagger) gem.
 
 ### [API Pagination](https://github.com/davidcelis/api-pagination)
 
@@ -39,8 +39,6 @@ To use it edit your pryrc file: `vi ~/.pryrc` and append following lines.
 
 ```
 require "awesome_print"
-IRB.conf[:SAVE_HISTORY] = 200
-IRB.conf[:HISTORY_FILE] = '~/.irb-history'
 AwesomePrint.pry!
 ```
 
@@ -60,7 +58,9 @@ your...
 
 ### [Letter Opener](https://github.com/fgrehm/letter_opener_web)
 
-Preview email in the default browser instead of sending it. This means you do not need to set up email delivery in your development environment, and you no longer need to worry about accidentally sending a test email to someone else's address.
+Preview the e-mail in your browser instead of really sending it. This means you do not need to set up any e-mail delivery method in your development environment, and you no longer need to worry about accidentally sending a test email to users.
+
+To access your inbox visit: `http://#{RAILS_HOST_WITH_PORT}/letter_opener`
 
 ### [Overcommit](https://github.com/brigade/overcommit)
 
