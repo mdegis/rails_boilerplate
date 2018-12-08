@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.3"
 
+gem "api-pagination"
 gem "coffee-rails", "~> 4.2"
 gem "doorkeeper"
 gem "grape"
@@ -10,6 +11,7 @@ gem "grape-active_model_serializers"
 gem "grape-swagger"
 gem "grape-swagger-rails"
 gem "jbuilder", "~> 2.5"
+gem "pagy"
 gem "pg", ">= 0.18", "< 2.0"
 gem "puma", "~> 3.11"
 gem "rails", "~> 5.2.1"

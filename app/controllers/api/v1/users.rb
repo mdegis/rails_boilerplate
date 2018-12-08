@@ -1,12 +1,20 @@
+require "doorkeeper/grape/helpers"
+
 module API
   module V1
     class Users < Grape::API
       include API::V1::Defaults
+      helpers Doorkeeper::Grape::Helpers
+
+      before do
+        doorkeeper_authorize!
+      end
 
       resource :users do
         desc "Return all users"
+        paginate per_page: 10, max_per_page: 200
         get "", root: :users do
-          User.all
+          paginate User.all
         end
 
         desc "Return a user"
