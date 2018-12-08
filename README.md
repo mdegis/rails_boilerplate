@@ -13,6 +13,12 @@
 - Lock account for 2 hours if 10 wrong login attempts are made and send e-mail to unlock it imidieatly
 - Create user without confirmation method for terminal usage
 
+## [Grape](https://github.com/ruby-grape/grape)
+
+Grape is a REST-like API framework for Ruby. It's designed to run on Rack or complement existing web application frameworks such as Rails and Sinatra by providing a simple DSL to easily develop RESTful APIs. It has built-in support for common conventions, including multiple formats, subdomain/prefix restriction, content negotiation, versioning and much more.
+
+You can check the [API folder](/app/controllers/api) to see Grape files and `http://#{RAILS_HOST_WITH_PORT}/documentation` to use automatically generated Swagger documentation page.
+
 ## Development
 
 ### [Awesome Print](https://github.com/awesome-print/awesome_print)
@@ -121,12 +127,4 @@ The stack is ready to host with [nginx proxy](https://github.com/jwilder/nginx-p
 [] Overcommit test on other machine
 
 [] Calling only `rake` will run tests and rubocop, document it. 
-
-[] Grape
-
-[] Restful User Actions
-
-[] Documentation
-
-[] Fast JSON API
 
