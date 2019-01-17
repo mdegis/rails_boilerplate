@@ -1,4 +1,4 @@
-# README
+# Rails Boilerplate
 
 - Rails version: 5.2.1
 - Ruby version: 2.5.3
@@ -8,10 +8,10 @@
 ## [Devise](https://github.com/plataformatec/devise)
 
 - Devise user setup is done (sign in, sign out, confirmation, reset password)
-- Add Username and ability to login with e-mail or username
-- Add Last Seen to user (5 minutes threshold for each `authenticate_user!` call)
-- Lock account for 2 hours if 10 wrong login attempts are made and send e-mail to unlock it imidieatly
-- Create user without confirmation method for terminal usage
+- Add 'username' and ability to login with e-mail or username
+- Add Last Seen to the user (5 minutes threshold for each `authenticate_user!` call)
+- Lock account for 2 hours if 10 wrong login attempts are made and send an e-mail to unlock it immediately
+- Create a user without confirmation method for terminal usage
 
 ## [Grape](https://github.com/ruby-grape/grape)
 
@@ -131,10 +131,3 @@ The repo contains [.travis.yml](/.travis.yml) and [.gitlab-ci.yml](/.gitlab-ci.y
 The Docker image build for production is different from development or test. It includes precompiled assets only (no node_modules and no sources). The [test folder](/test) is removed and the Alpine packages for Node and Yarn are not installed.
 
 The stack is ready to host with [nginx proxy](https://github.com/jwilder/nginx-proxy) and [letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion). See [docker-compose.production.yml](/docker-compose.production.yml) for example setup.
-
-# TODO:
-
-[] Overcommit test on other machine
-
-[] Calling only `rake` will run tests and rubocop, document it. 
-
