@@ -36,7 +36,7 @@ module API
             end
           when "refresh_token"
             token = Doorkeeper::AccessToken.by_refresh_token(permitted_params[:refresh_token])
-            if token&.accessible? && token&.revoke
+            if token&.revoke
               new_token = Doorkeeper::AccessToken.create!(use_refresh_token: true,
                                                           expires_in: Doorkeeper.configuration.access_token_expires_in,
                                                           resource_owner_id: token.resource_owner_id,
